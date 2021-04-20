@@ -9,14 +9,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
   link: {
-    marginRight: theme.spacing(2),
+    // marginRight: theme.spacing(2),
     textDecoration: 'none',
     color: 'inherit'
   }
@@ -31,7 +25,7 @@ const Navbar = () => {
       <AppBar position="static">
         <Toolbar>
        
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h6">
             | Google Book Search |
           </Typography>
           <Link to='/' className={classes.link}>
@@ -40,7 +34,7 @@ const Navbar = () => {
           <Link to='/saved' className={classes.link}>
             <Button color='inherit'>Saved</Button>
           </Link>
-         
+    
         </Toolbar>
       </AppBar>
     </div>
