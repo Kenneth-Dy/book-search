@@ -65,9 +65,10 @@ const Search = () => {
       .then(() => alert('Book Added!'))
       .catch(err => console.log(err))
   }
+  
 
   return (
-    
+
     <>
     <Grid container justify='center'>
       <Grid item xs={9} >
@@ -101,10 +102,9 @@ const Search = () => {
         bookState.books.length 
           ? bookState.books.map((book, i) => (
             <Grid item xs={9} key={i}>
-
               <Paper elevation={0} className={classes.bookLayout} variant="outlined">
                 <Box className={classes.bookLayout}>
-                <img alt={book.volumeInfo.title} src={book.volumeInfo.imageLinks.thumbnail} />
+                  <img alt={book.volumeInfo.title} src={book.volumeInfo.imageLinks.thumbnail} />
                   <Typography variant={'h6'}>{book.volumeInfo.title}</Typography> 
                   <Typography variant={'body1'}>{book.volumeInfo.authors}</Typography> 
                   {/* <Typography variant={'body1'}>{book.volumeInfo.description}</Typography>  */}
@@ -119,13 +119,11 @@ const Search = () => {
                       link: book.volumeInfo.infoLink
                     })}
                   >Save</Button>
-              </Box>
-                 
+                </Box>
               </Paper>  
             </Grid>  
           ))
           : null
-
       }
     </Grid>
     </>
