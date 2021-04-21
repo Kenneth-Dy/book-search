@@ -1,16 +1,17 @@
-import Box from '@material-ui/core/Box'
-import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
-import Grid from '@material-ui/core/Grid'
+import Typography from '@material-ui/core/Typography'
 import Paper from '@material-ui/core/Paper'
+import Grid from '@material-ui/core/Grid'
+import Box from '@material-ui/core/Box'
 
 const useStyles = makeStyles((theme) => ({
   bannerLayout: {
     width: 'auto',
-    height: '25vh',
+    height: '30%',
     backgroundColor: theme.palette.secondary.main,
     color: theme.palette.secondary.contrastText,
     marginTop: 20,
+    paddingBottom: 10,
   },
 
 }));
@@ -22,16 +23,19 @@ const Banner = () => {
   return (
     <Grid container justify='center'>
       <Grid item xs={10} >
-        <Paper >
           <Box
             textAlign="center"
-            className={classes.bannerLayout}
+            
           >
+          <Paper className={classes.bannerLayout}>
             <Typography variant='h1' gutterBottom>
               Google Book Search
             </Typography>
-          </Box>
+            <Typography variant='h4' gutterBottom>
+              Search and Save your favorite books to a list
+            </Typography>
         </Paper>   
+          </Box>
       </Grid>
     </Grid>
   )

@@ -6,10 +6,10 @@ import {
 import Search from './pages/Search'
 import Saved from './pages/Saved'
 import Navbar from './components/Navbar'
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
+import { createMuiTheme, ThemeProvider, createResponsiveFontSizes, responsiveFontSizes } from '@material-ui/core/styles'
 import Banner from './components/Banner'
 
-const theme = createMuiTheme({
+let theme = createMuiTheme({
   palette: {
     primary: {
       light: '#ff5f52',
@@ -37,6 +37,8 @@ const theme = createMuiTheme({
     },
   },
 });
+
+theme= responsiveFontSizes(theme)
 
 const App = () => {
   return (

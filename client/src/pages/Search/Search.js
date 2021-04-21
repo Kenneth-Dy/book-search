@@ -1,12 +1,12 @@
-import Grid from '@material-ui/core/Grid'
-import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
+import Typography from '@material-ui/core/Typography'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import Paper from '@material-ui/core/Paper'
+import Grid from '@material-ui/core/Grid'
 import Box from '@material-ui/core/Box'
-import { useState } from 'react'
 import Book from '../../utils/BookAPI'
+import { useState } from 'react'
 
 const useStyles = makeStyles((theme) => ({
   searchLayout: {
@@ -104,21 +104,29 @@ const Search = () => {
             <Grid item xs={9} key={i}>
               <Paper elevation={0} className={classes.bookLayout} variant="outlined">
                 <Box className={classes.bookLayout}>
-                  <img alt={book.volumeInfo.title} src={book.volumeInfo.imageLinks.thumbnail} />
-                  <Typography variant={'h6'}>{book.volumeInfo.title}</Typography> 
-                  <Typography variant={'body1'}>{book.volumeInfo.authors}</Typography> 
-                  {/* <Typography variant={'body1'}>{book.volumeInfo.description}</Typography>  */}
-                  <Button 
-                    color='primary' 
-                    variant="contained" 
-                    onClick={() => handleSaveBook({
-                      title: book.volumeInfo.title,
-                      authors: book.volumeInfo.authors,
-                      description: book.volumeInfo.description,
-                      image: book.volumeInfo.imageLinks.thumbnail,
-                      link: book.volumeInfo.infoLink
-                    })}
-                  >Save</Button>
+                  <Grid container spacing={2}>
+                    <Grid item  s={12} m={3}>
+                      <img alt={book.volumeInfo.title} src={book.volumeInfo.imageLinks.thumbnail} />
+                    </Grid>
+                    <Grid item xs={9}>
+                      <Typography variant={'h6'}>{book.volumeInfo.title}</Typography> 
+                      <Typography variant={'body1'}>{book.volumeInfo.authors}</Typography> 
+                      <Typography variant={'body2'}>{book.volumeInfo.description}</Typography>
+                    </Grid>
+                    <Grid item xs={12}>
+                      <Button 
+                        color='primary' 
+                        variant="contained" 
+                        onClick={() => handleSaveBook({
+                          title: book.volumeInfo.title,
+                          authors: book.volumeInfo.authors,
+                          description: book.volumeInfo.description,
+                          image: book.volumeInfo.imageLinks.thumbnail,
+                          link: book.volumeInfo.infoLink
+                        })}
+                      >Save</Button>
+                    </Grid>
+                  </Grid>
                 </Box>
               </Paper>  
             </Grid>  

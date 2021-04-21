@@ -61,22 +61,30 @@ const Saved = () => {
             <Grid item xs={9} key={i}>
               <Paper elevation={0} className={classes.bookLayout} variant="outlined">
                 <Box className={classes.bookLayout}>
-                  <img alt={book.title} src={book.image} />
-                  <Typography variant={'h6'}>{book.title}</Typography>
-                  <Typography variant={'body1'}>{book.authors}</Typography>
-                  <Typography variant={'body2'}>{book.description}</Typography> 
-                  <Button
-                    color='primary'
-                    variant="contained"
-                    className={classes.buttons}
-                    href={book.link}
-                  >More Info</Button>
-                  <Button
-                    color='secondary'
-                    variant="contained"
-                    className={classes.buttons}
-                    onClick={() => handleDeleteBook(book._id)}
-                  >Delete</Button>
+                  <Grid container spacing={2}>
+                    <Grid item s={12} m={3}>
+                      <img alt={book.title} src={book.image} />
+                    </Grid>
+                    <Grid item xs={9}>
+                      <Typography variant={'h6'}>{book.title}</Typography>
+                      <Typography variant={'body1'}>{book.authors}</Typography>
+                      <Typography variant={'body2'}>{book.description}</Typography>
+                    </Grid>
+                    <Grid item xs={12}>
+                      <Button
+                        color='primary'
+                        variant="contained"
+                        className={classes.buttons}
+                        href={book.link}
+                      >More Info</Button>
+                      <Button
+                        color='secondary'
+                        variant="contained"
+                        className={classes.buttons}
+                        onClick={() => handleDeleteBook(book._id)}
+                      >Delete</Button>
+                    </Grid>
+                  </Grid>
                 </Box>
               </Paper>
             </Grid>
